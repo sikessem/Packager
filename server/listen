@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+if(PHP_SAPI !== 'cli') exit(1);
+shell_exec(PHP_BINARY . ' -S ' . (isset($argv[1]) ? $argv[1] : '0.0.0.0:80') . ' -t ' . dirname(__DIR__) . DIRECTORY_SEPARATOR . 'client');
+exit;
